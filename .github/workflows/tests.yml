@@ -1,0 +1,31 @@
+name: Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  syntax:
+    name: Check syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: 4d/build4d-action@main
+
+  tests:
+    name: Tests on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v5
+      - name: Download tool4d
+        id: tool4d
+        uses: 4d/tool4d-action@main
+      - name: Run tests
+        run: python3 tests/run.py
+        env:
+          TOOL4D: ${{ steps.tool4d.outputs.tool4d }}

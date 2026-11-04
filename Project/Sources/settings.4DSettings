@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="1">
+	<com.4d>
+		<compiler>
+			<options symbol_file="false" syntax_file="true"/>
+		</compiler>
+		<general component_classStore_name="osc"/>
+	</com.4d>
+</preferences>

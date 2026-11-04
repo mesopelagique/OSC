@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="OSC" uuid="0CA037B844404EAEA9B3D81F21AD831A" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+</base>
